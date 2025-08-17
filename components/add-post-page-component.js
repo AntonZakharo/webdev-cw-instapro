@@ -48,8 +48,7 @@ export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
       });
     }
     document.getElementById("add-button").addEventListener("click", () => {
-      const description = appEl.querySelector(".textarea").innerHTML;
-      console.log(imageUrl);
+      const description = appEl.querySelector(".textarea").value;
       onAddPostClick({
         description: description,
         imageUrl: imageUrl,

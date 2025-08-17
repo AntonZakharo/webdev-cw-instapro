@@ -23,6 +23,20 @@ export function getPosts({ token }) {
     });
 }
 
+export function getUserPosts({ userId }) {
+  return fetch(`${postsHost}/user-posts/${userId}`)
+    .then((response) => {
+      if (response.status === 401) {
+        throw new Error("Нет авторизации");
+      }
+
+      return response.json();
+    })
+    .then((data) => {
+      return data.posts;
+    });
+}
+
 export function postPost({ description, imageUrl, token }) {
   return fetch(postsHost, {
     method: "POST",

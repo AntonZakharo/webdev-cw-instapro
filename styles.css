@@ -34,8 +34,8 @@
 }
 
 .logout-button {
-  width: 130px;
   text-align: right;
+  margin-left: 90px;
 }
 
 .posts {
